@@ -51,7 +51,51 @@ ol {
 }
 
 #info-para {
-  padding: 1rem;
+  padding: 5rem;
 }
 
 /* Nav section */
+
+.navLinkBox {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.gridBox {
+  background-color: rgb(147, 90, 199);
+  display: grid;
+  height: 40rem;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: stretch;
+}
+#boxItem1 {
+  background-color: lightblue;
+  width: fit-content;
+}
+#boxItem2 {
+  background-color: lightgreen;
+  width: 3rem;
+  grid-column: 2/4;
+  grid-row: 1/3;
+}
+#boxItem3 {
+  background-color: lightcoral;
+  grid-column: 1/4;
+  grid-row: 1/3;
+  opacity: 0.5;
+}
+#boxItem4 {
+  background-color: lightgoldenrodyellow;
+}
+#boxItem5 {
+  background-color: lightpink;
+}
+#boxItem6 {
+  background-color: lightgray;
+}

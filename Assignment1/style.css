@@ -3,8 +3,10 @@
 body {
   background: linear-gradient(
     to bottom right,
-    rgb(102, 173, 161),
-    rgb(80, 165, 154)
+    rgb(224, 185, 143),
+    rgb(122, 184, 173),
+    rgb(95, 154, 146),
+    rgb(160, 132, 103)
   );
 }
 
@@ -41,7 +43,7 @@ nav {
 }
 
 #questions {
-  color: rgb(144, 231, 255);
+  color: rgb(255, 199, 135);
   font-weight: bold;
   font-size: 1.2rem;
   font-family: "Oswald", sans-serif;
