@@ -33,6 +33,14 @@ nav {
   font-family: "roboto condensed", sans-serif;
   text-align: center;
 }
+nav a {
+  color: rgb(0, 242, 255);
+  text-decoration: none;
+  padding: 1rem;
+}
+a:hover {
+  color: rgb(0, 137, 192);
+}
 
 #answers {
   color: rgb(255, 255, 255);
