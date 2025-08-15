@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Quicksand:wght@300..700&display=swap");
+
+* {
+  color: rgb(217, 252, 255);
+  background-color: rgb(63, 112, 87);
+}
+/* 
+This is a comment
+*/
+p {
+  color: aqua;
+}
+.blue {
+  color: rgb(209, 237, 218);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#info-para li {
+  border: 1rem solid red;
+}
+
+section {
+  text-align: center;
+  border: 0.5rem solid rgb(190, 248, 252);
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(211, 226, 247);
+  font-size: 3rem;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+h2 {
+  color: lightblue;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+}
+
+ol {
+  width: 50%;
+}
+
+#info-para {
+  padding: 1rem;
+}
+
+/* Nav section */

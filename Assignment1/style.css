@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background: linear-gradient(
+    to bottom right,
+    rgb(102, 173, 161),
+    rgb(80, 165, 154)
+  );
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: "Oswald", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  color: rgb(199, 241, 255);
+}
+
+nav {
+  font-size: 1.5rem;
+  font-family: "roboto condensed", sans-serif;
+  text-align: center;
+}
+
+#answers {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-family: "roboto condensed", sans-serif;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+#questions {
+  color: rgb(144, 231, 255);
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Oswald", sans-serif;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+section {
+  width: 70%;
+  border: 0.3rem solid rgb(149, 212, 205);
+  border-style: outset;
+  margin: 2rem auto;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(95, 152, 155),
+    rgb(47, 119, 132)
+  );
+}
+
+#website-image {
+  width: 50%;
+  margin: 2rem auto;
+}
