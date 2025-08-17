@@ -50,8 +50,17 @@ a:hover {
   padding-bottom: 2rem;
 }
 
+#answersList {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-family: "roboto condensed", sans-serif;
+  padding: 1.5rem;
+  padding-left: 3rem;
+  padding-bottom: 2rem;
+}
+
 #questions {
-  color: rgb(255, 199, 135);
+  color: rgb(255, 198, 133);
   font-weight: bold;
   font-size: 1.2rem;
   font-family: "Oswald", sans-serif;
@@ -61,7 +70,7 @@ a:hover {
 }
 
 section {
-  width: 70%;
+  width: 60%;
   border: 0.3rem solid rgb(149, 212, 205);
   border-style: outset;
   margin: 2rem auto;
