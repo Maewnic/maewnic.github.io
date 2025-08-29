@@ -45,6 +45,25 @@ const a = 10;
 let b = "10";
 let setToBlue = false;
 
+// for loop
+for (let steps = 0; steps < 5; steps++) {
+  console.log("Step taken:", steps);
+}
+
+// for each
+
+const numbers = [12, 14, 8, 6];
+let total = 0;
+
+function totalNumbers(item) {
+  total = total + item;
+  console.log("item price", item, "running total", total);
+}
+
+numbers.forEach(totalNumbers);
+
+console.log("final total", total);
+
 if (!setToBlue) {
   document.body.style.backgroundColor = "red";
 } else {
@@ -56,4 +75,15 @@ function tellMeHowHungryIAM() {
   console.log(hiddenVariable);
 }
 
-console.log(hiddenVariable);
+cosole.log(hiddenVariable);
+
+function addTwoNumbers() {
+  let a = 10;
+  let b = 5;
+  let addTotal = a + b;
+  return addTotal;
+}
+
+let numberTotal = addTwoNumbers(3, 4);
+let diffTotal = addTwoNumbers(12, 50);
+console.log(numberTotal, diffTotal);
