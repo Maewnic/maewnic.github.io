@@ -1,9 +1,11 @@
+/* Easy and clean to read font reduce stress when studying */
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 /* store my custom variables */
 :root {
-  --colour-01: white;
-  --colour-02: rgb(0, 0, 0);
-  --colour-03: cornflowerblue;
-  --colour-04: coral;
+  --colour-01: rgb(0, 221, 255);
+  --colour-02: white;
+  --colour-03: rgba(24, 40, 45, 0.5);
 }
 
 body {
@@ -13,13 +15,14 @@ body {
   gap: 1rem;
   line-height: 1.6;
   padding-left: 3rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
+  font-family: "Jua", sans-serif;
 }
 
 /* I changed the background color into a picture that I took myself at the 12 apostles. It shouldn't have any copyright right??
 the reason why I choose this photo is because I wanted the website to show a calm and peaceful vibe
 so when looking at it the viewer feels relaxed while studying. It's similar to how Lofi music have a lofi girl.
-However, I should also add an option to turn off the picture so incase the user find it distracting */
+While still having the option to turn off*/
 .overlay {
   position: fixed;
   top: 0;
@@ -43,7 +46,7 @@ footer {
   left: 0;
   padding: 0.5rem;
   width: 100%;
-  background: rgba(24, 40, 45, 0.5);
+  background: var(--colour-03);
   backdrop-filter: blur(5px);
   text-align: center;
   display: flex;
@@ -85,7 +88,7 @@ main {
 }
 
 #timelineProgress::-webkit-progress-value {
-  background-color: rgb(0, 221, 255);
+  background-color: var(--colour-01);
 }
 
 /* I moved the icon to the middle and make it big because that supposed to be the main interaction of the website.
@@ -155,15 +158,17 @@ While other interactions will the at the cornor of the screen as an option for c
   width: 300px;
 }
 
+/* I positioned the background controls at the side of the webpage since it is not a main interaction of the web */
+
 .bgControlContainer {
   position: absolute;
-  top: 1rem;
+  top: 14rem;
   right: 1rem;
-  width: 7rem;
-  background: rgba(24, 40, 45, 0.5);
+  width: 9rem;
+  background: var(--colour-03);
   backdrop-filter: blur(5px);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -186,14 +191,14 @@ While other interactions will the at the cornor of the screen as an option for c
   gap: 0.5rem;
 }
 
-/* Customising sliders so the design can be cohesive*/
+/* Customising sliders so the design is not the defult one. 
+Since the defult one the color is inconsistance across different devices */
 
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
-  width: 4rem;
   height: 0.5rem;
-  background: rgb(234, 132, 95);
+  background: rgb(144, 144, 144);
   border-radius: 5px;
   cursor: pointer;
   margin: 0 10px;
@@ -203,8 +208,47 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: rgb(0, 221, 255);
+  background: var(--colour-01);
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px var(--colour-01);
   cursor: pointer;
+}
+
+/* To keep secondary features organised, 
+I located the timer and the background settings to be in the same grid like widgets. */
+.TimerContainer {
+  position: absolute;
+  top: 7rem;
+  right: 1rem;
+  width: 9rem;
+  transform: translateY(-50%);
+  background: var(--colour-03);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--colour-02);
+  z-index: 5;
+}
+
+.TimerContainer .title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.TimerContainer .timer {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.button-wrapper button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#reset {
+  background-color: var(--colour-01);
+  border: solid var(--colour-02);
+  border-radius: 10px;
 }
