@@ -3,8 +3,8 @@
 
 /* store my custom variables */
 :root {
-  --colour-01: rgb(0, 221, 255);
-  --colour-02: white;
+  --colour-01: rgb(10, 206, 236);
+  --colour-02: solid white;
   --colour-03: rgba(24, 40, 45, 0.5);
 }
 
@@ -14,7 +14,7 @@ body {
   align-items: left;
   gap: 1rem;
   line-height: 1.6;
-  padding-left: 3rem;
+  padding-left: 2.5rem;
   padding-top: 1.5rem;
   font-family: "Jua", sans-serif;
 }
@@ -36,6 +36,10 @@ While still having the option to turn off*/
 
 h1 {
   font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1rem;
 }
 
 /* I kept the footer a little hidden at the bottom so it doesn't distract the user while studying along with the aesthetic of the page.
@@ -147,8 +151,8 @@ While other interactions will the at the cornor of the screen as an option for c
 }
 
 #muteButton img {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   &:hover {
     opacity: 0.7;
   }
@@ -210,7 +214,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 20px;
   background: var(--colour-01);
   border-radius: 50%;
-  border: 2px var(--colour-01);
+  border: 2px var(--colour-02);
   cursor: pointer;
 }
 
@@ -249,6 +253,6 @@ I located the timer and the background settings to be in the same grid like widg
 
 #reset {
   background-color: var(--colour-01);
-  border: solid var(--colour-02);
+  border: var(--colour-02);
   border-radius: 10px;
 }

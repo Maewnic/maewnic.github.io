@@ -14,6 +14,7 @@
     <!-- this is the page heading -->
     <header>
       <h1>Relaxing Study Music</h1>
+      <h2>"Ambient Wave 56 - (MSfxP7 - 78)" by Erokia</h2>
     </header>
 
      <!-- this is the main content area -->
@@ -62,8 +63,6 @@
         </div>
         <!-- adding background control section. This allows the user to adjust the background darkness and blur amount to their preference.
          This is important because different people have different preferences for how much they want to see the background.
-         Some people may want a darker background to reduce distractions while studying, 
-         others may want to see the background more clearly for aesthetics or to connect with the nature photo I added for calmness.
          The blur effect also helps to reduce distractions by making the background less detailed. -->
         <div class="bgControlContainer">
           <label for="bgSliderBrightness" class="bgBrightness">Brightness</label>
@@ -79,9 +78,18 @@
             />
           </div>
         </div>
+        <!-- My friend gave a feedback and suggested that a study website should have a pomodoro timer -->
+        <div class="TimerContainer">
+          <h1 class="title" id="timerTitle">Study Time</h1>
+          <p class="timer" id="timer">25:00</p>
+        <div class="button-wrapper">
+       <button id="reset">Reset</button>
+  </div>
+</div>
       </section>
     </main>
 
+    <!-- footer to credit the creator of this music -->
     <footer>
         <p class="attribution">
     "<a target="_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia/sounds/516902">Ambient Wave 56 - (MSfxP7 - 78)</a>" by 

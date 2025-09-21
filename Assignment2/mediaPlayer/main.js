@@ -46,9 +46,11 @@ function togglePlayPause() {
     audioElement.play();
     playPauseIcon.src = "assets/pauseIcon.png"; // Change to pause icon
     playPauseIcon.alt = "pause button";
+    startTimer();
   } else {
     audioElement.pause();
     playPauseIcon.src = "assets/playIcon.png"; // Change to play icon
+    stopTimer();
   }
 }
 
@@ -153,12 +155,85 @@ function updateOverlayFilter() {
   overlay.style.filter = `brightness(${currentBrightness}) blur(${currentBlur}px)`;
 }
 
+// Event for brightness adjustment
 bgSliderBrightness.addEventListener("input", function () {
   currentBrightness = 1 - this.value / 100;
   updateOverlayFilter();
 });
 
+// Event for blur adjustment
 bgSliderBlur.addEventListener("input", function () {
   currentBlur = (this.value / 50) * 10;
   updateOverlayFilter();
 });
+
+// Timer set to 25min for 'Study time'. Then timer set to 5min for 'Break time' and repeat
+const resetEl = document.getElementById("reset");
+const timerEl = document.getElementById("timer");
+const timerTitle = document.getElementById("timerTitle");
+
+let interval;
+let timeLeft = 1500;
+let isPlaying = false;
+let isStudyTime = true;
+
+function updateTimer() {
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
+  timerEl.innerHTML = `${minutes.toString().padStart(2, "0")}:${seconds
+    .toString()
+    .padStart(2, "0")}`;
+}
+
+// Timer start and stop along with the media player when pause and play
+function startTimer() {
+  if (interval) return;
+  interval = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+    if (timeLeft === 0) {
+      clearInterval(interval);
+      interval = null;
+      audioElement.pause();
+      playPauseIcon.src = "assets/playIcon.png";
+
+      updateTimer();
+      if (isStudyTime) {
+        // switch to break time
+        isStudyTime = false;
+        timeLeft = 300; // 5 minutes
+        timerTitle.textContent = "Break Time";
+        console.log("time is up");
+      } else {
+        // switch back to study time
+        isStudyTime = true;
+        timeLeft = 1500; // 25 minutes
+        timerTitle.textContent = "Study Time";
+        audioElement.play();
+        playPauseIcon.src = "assets/pauseIcon.png"; // Change to pause icon
+        playPauseIcon.alt = "pause button";
+      }
+      updateTimer();
+      startTimer();
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(interval);
+  interval = null;
+}
+
+// Timer reset back to 25min along with pausing the music
+function resetTimer() {
+  clearInterval(interval);
+  interval = null;
+  timeLeft = 1500;
+  updateTimer();
+  audioElement.pause();
+  playPauseIcon.src = "assets/playIcon.png";
+}
+
+resetEl.addEventListener("click", resetTimer);
+
+updateTimer();
