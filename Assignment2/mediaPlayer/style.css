@@ -1,39 +1,54 @@
 /* store my custom variables */
 :root {
-  /* colour palette */
   --colour-01: white;
-  --colour-02: black;
-  --colour-03: rgb(110, 65, 35);
+  --colour-02: rgb(0, 0, 0);
+  --colour-03: cornflowerblue;
   --colour-04: coral;
-  --border: solid coral 2px;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: left;
   gap: 1rem;
   line-height: 1.6;
-  background-color: var(--colour-03);
-  color: var(--colour-01);
+  padding-left: 3rem;
+  padding-top: 2rem;
+}
+
+/* I changed the background color into a picture that I took myself at the 12 apostles. It shouldn't have any copyright right??
+the reason why I choose this photo is because I wanted the website to show a calm and peaceful vibe
+so when looking at it the viewer feels relaxed while studying. It's similar to how Lofi music have a lofi girl.
+However, I should also add an option to turn off the picture so incase the user find it distracting */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/12apostles2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1; /* this is to make the background behind everything */
 }
 
 h1 {
   font-size: 2.5rem;
 }
 
-nav {
-  border: var(--border);
-  padding: 1rem;
-}
-
+/* I kept the footer a little hidden at the bottom so it doesn't distract the user while studying along with the aesthetic of the page.
+ However, still adding a little peak at the bottom to know that it's still there, crediting the original source of music */
 footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  padding: 0.5rem;
   width: 100%;
-  border: var(--border);
+  background: rgba(24, 40, 45, 0.5);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -64,4 +79,132 @@ main {
 
 #timelineProgress {
   width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#timelineProgress::-webkit-progress-value {
+  background-color: rgb(0, 221, 255);
+}
+
+/* I moved the icon to the middle and make it big because that supposed to be the main interaction of the website.
+It's a stylised way of showing how the music play and pause is the only interaction needed to get the study going.
+While other interactions will the at the cornor of the screen as an option for customization */
+#playPauseButton {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30rem;
+  height: 30rem;
+  z-index: 1;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.timelineContainer {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* At first I thought the volume slider should be at the side of the screen for a cleaner look,
+ but then I realized that being at the edge of the screen makes it a little less accessible for users
+  since the play button is in the center. I ended up moving it closer to the play button at the bottom
+  and it turned out to be a better user experience keeping the main controls close together */
+.volumeContainer {
+  position: absolute;
+  top: 78%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+#muteButton {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+#muteButton img {
+  width: 40px;
+  height: 40px;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+#volumeSlider {
+  width: 300px;
+}
+
+.bgControlContainer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 7rem;
+  background: rgba(24, 40, 45, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.bgControlContainer label {
+  font-size: 0.9rem;
+}
+
+.bgBrightnessContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.bgBlurContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Customising sliders so the design can be cohesive*/
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 4rem;
+  height: 0.5rem;
+  background: rgb(234, 132, 95);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(0, 221, 255);
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
 }

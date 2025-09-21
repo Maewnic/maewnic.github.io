@@ -11,7 +11,7 @@ videoElement.removeAttribute("controls");
 // I want to updater total time based on the curretly loaded media file
 //This will run when page loads, but if I wanted to channge the file after wards , I'd have to
 // update there too
-videoElement.addEventListener("canplay", updateTimeline);
+videoElement.addEventListener("canplay", updateTotalTime);
 
 function updateTotalTime() {
   let videoSeconds = videoElement.duration;

@@ -1,0 +1,155 @@
+:root {
+  --g1: #a8ffae; /* light green */
+  --g2: #b5ffd9; /* mint */
+  --g3: #bde0fe; /* light blue */
+  --panel-bg: rgba(255, 255, 255, 0.6); /* translucent white panel */
+  --muted: #3b4752;
+}
+
+/* page background: soft animated gradient */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--g1), var(--g2), var(--g3));
+  background-size: 300% 300%;
+  animation: gradientMove 22s ease infinite;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* center container */
+.page-wrap {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  justify-content: center;
+}
+
+/* translucent panel */
+.player-container {
+  width: 100%;
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 12px 40px rgba(16, 24, 40, 0.12);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* maintain 16:9 aspect ratio for video */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+}
+
+/* the YT iframe will be injected into #player; force it to fill the wrap */
+#player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* buttons + select */
+.controls button,
+.controls select {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--muted);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+}
+
+/* sliders expand to use available space */
+.controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #7fe7c8 0%, #7fbdfc 100%);
+  outline: none;
+}
+
+/* progress (grow to fill) */
+#progress {
+  flex: 1 1 auto;
+}
+
+/* volume smaller */
+#volume {
+  width: 120px;
+  flex: 0 0 120px;
+}
+
+/* range thumb styling (WebKit) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  margin-top: -4px;
+}
+
+/* title */
+.title {
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.44);
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* small responsive tweaks */
+@media (max-width: 540px) {
+  .controls {
+    gap: 6px;
+    padding: 10px;
+  }
+  #volume {
+    display: none;
+  } /* hide volume on tiny screens */
+}
