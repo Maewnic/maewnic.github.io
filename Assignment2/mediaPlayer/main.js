@@ -125,6 +125,7 @@ volumeSlider.addEventListener("input", function () {
   audioElement.volume = this.value;
   muteIcon.src =
     this.value == 0 ? "./assets/muteIcon.png" : "./assets/volumeIcon.png";
+  // Icons from Canvas resorce but changed to white.
 });
 
 muteButton.addEventListener("click", function () {

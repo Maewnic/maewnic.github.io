@@ -6,6 +6,7 @@
   --colour-01: rgb(10, 206, 236);
   --colour-02: solid white;
   --colour-03: rgba(24, 40, 45, 0.5);
+  --colour-04: rgb(162, 194, 199);
 }
 
 body {
@@ -19,8 +20,9 @@ body {
   font-family: "Jua", sans-serif;
 }
 
-/* I changed the background color into a picture that I took myself at the 12 apostles. It shouldn't have any copyright right??
-the reason why I choose this photo is because I wanted the website to show a calm and peaceful vibe
+/* I changed the background color into a picture that I took myself at the 12 apostles.
+the reason why I choose this photo is because I wanted the website to show a calm and peaceful vibe 
+and the sublimeness of the music match well with the visual.
 so when looking at it the viewer feels relaxed while studying. It's similar to how Lofi music have a lofi girl.
 While still having the option to turn off*/
 .overlay {
@@ -202,7 +204,7 @@ input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 0.5rem;
-  background: rgb(144, 144, 144);
+  background: var(--colour-04);
   border-radius: 5px;
   cursor: pointer;
   margin: 0 10px;
