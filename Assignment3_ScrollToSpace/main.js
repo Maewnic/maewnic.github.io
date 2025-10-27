@@ -25,13 +25,13 @@ window.addEventListener("scroll", () => {
   // Split scroll into two parts
   if (progress <= linearPortion) {
     // Linear part (0–80 km)
-    const t = progress / linearPortion; // 0–1
-    km = Math.round(t * cutoff);
+    const progressRatio = progress / linearPortion;
+    km = Math.round(progressRatio * cutoff);
   } else {
     // Exponential part (80–10 000 km)
-    const t = (progress - linearPortion) / (1 - linearPortion); // 0–1
-    const exp = 4; // controls steepness (try 2–4)
-    km = Math.round(cutoff + Math.pow(t, exp) * (maxKm - cutoff));
+    const progressRatio = (progress - linearPortion) / (1 - linearPortion);
+    const exp = 4;
+    km = Math.round(cutoff + Math.pow(progressRatio, exp) * (maxKm - cutoff));
   }
 
   distanceDisplay.textContent = `${km.toLocaleString()} km`;
