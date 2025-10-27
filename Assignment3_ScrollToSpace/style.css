@@ -67,7 +67,7 @@ So that it won't interfere with the other layers. */
 /* The end layer doesn't have to be big. Keeping the UI consistently clean. */
 .layer-end {
   height: 3rem;
-  background: linear-gradient(-70deg, rgb(35, 8, 35), rgb(2, 2, 30));
+  background: linear-gradient(-70deg, rgb(25, 8, 35), rgb(2, 2, 30));
   color: white;
   display: flex;
   justify-content: center;
@@ -109,4 +109,12 @@ So that it won't interfere with the other layers. */
 And to have a consistent clean look to the website. */
 .info-object:hover p {
   opacity: 1;
+}
+
+.object {
+  width: 45rem;
+  position: relative;
+  top: 140rem;
+  left: 65%;
+  transform: translate(-50%, -50%);
 }
