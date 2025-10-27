@@ -31,7 +31,25 @@ body {
   gap: 2rem;
   opacity: 1;
   /* background-color: cornsilk; */
-  transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
+  /* transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease; */
+}
+
+input[type="text"] {
+  border: 2px solid;
+  transition: border-color 0.1s ease;
+}
+input[type="text"]:focus {
+  border-color: purple;
+}
+
+#duck-icon {
+  width: 5rem;
+  fill: red;
+  transition: 1s;
+}
+
+#duck-icon:hover {
+  fill: purple;
 }
 
 button {
@@ -41,6 +59,7 @@ button {
   color: #e5e5cb;
   background-color: transparent;
   border: 2px solid cornsilk;
+  /* applies when user removes mouse */
   transition: background-color 1s ease;
 }
 
@@ -49,17 +68,38 @@ button:hover {
   /* transition: background-color 0.5s ease; */
   border-color: coral;
 
-  transition: border-color 0.5s ease;
+  /* transition: border-color 0.5s ease; */
 }
 
 .ball {
   min-width: 50px;
   min-height: 50px;
   /* border-radius: 50%; */
-  background-color: purple;
+  background-color: rgb(255, 0, 0);
   transition: transform 0.7s ease-out;
-  /* transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); */
-  /* transition: translate 0.8s ease-out rotate 0.8s ease scale 0.8s ease; */
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: translate 0.8s ease-out rotate 0.8s ease scale 0.8s ease;
+  animation: colorShift 4s linear infinite forwards;
+}
+
+@keyframes colorShift {
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  25% {
+    background-color: rgb(255, 234, 0);
+  }
+  50% {
+    background-color: rgb(64, 255, 0);
+    transform: scale(2);
+  }
+  75% {
+    background-color: rgb(0, 221, 255);
+  }
+  100% {
+    background-color: rgb(255, 0, 0);
+    transform: rotate(360deg);
+  }
 }
 
 .controls {
@@ -70,4 +110,13 @@ button:hover {
 
 .moveright {
   translate: 50px 0px;
+}
+
+/* media query for prefers reduced motion */
+/* anything inside will appply id user have this engaged */
+@media (prefers-reduced-motion: reduce) {
+  .outer {
+    /* if user prefers reduce motion, set animation to none */
+    animation: none;
+  }
 }

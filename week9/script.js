@@ -1,5 +1,5 @@
 // find our elements
-const transforOuter = document.querySelector(".outer");
+const transformOuter = document.querySelector(".outer");
 const ball = document.querySelector(".ball");
 const moveButton = document.querySelector("#move-button");
 const scaleButton = document.querySelector("#scale-button");
@@ -13,16 +13,20 @@ let ballScale = 1;
 
 // this function will take the current valumes and apply to ball
 function updateTransform() {
-  ball.style.transform = `translateX(${ballTranslateX}px) rotate(${ballRotate}) scale(${ballScale})`;
+  ball.style.transform = `translateX(${ballTranslateX}px) rotate(${ballRotate}deg) scale(${ballScale})`;
 }
 
 // move our ball to the right
 function moveBall() {
   // find size detail of parent element
   const parentSize = transformOuter.getBoundingClientRect();
-  const goal = parentSize.width / 2 - console.log(parentSize);
+  const goal = parentSize.width / 2 - 25;
+  console.log(parentSize);
   ballTranslateX += 10;
-  if (ballTranslateX > goal) updateTransform();
+  if (ballTranslateX > goal) {
+    alert("you scored a goal");
+  }
+  updateTransform();
 }
 
 // attach to button
@@ -44,7 +48,9 @@ function scaleBall() {
 scaleButton.addEventListener("click", scaleBall);
 
 function resetBall() {
-  ballReset -= 0.1;
+  ballTranslateX = 0;
+  ballRotate = 0;
+  ballScale = 1;
   updateTransform();
 }
 resetButton.addEventListener("click", resetBall);

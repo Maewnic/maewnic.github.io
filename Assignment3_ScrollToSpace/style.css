@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* the fixed display showing height and layer */
+/* The text is big and bold to show a clear context of this website (scrolling through the layers of the atmosphere) */
+/* It is placed to the far left while the other elements are on the right */
+#height-display {
+  position: fixed;
+  bottom: 15rem;
+  left: 2.5rem;
+  color: white;
+}
+
+#distance {
+  font-size: 8rem;
+  font-weight: bold;
+}
+
+#layer {
+  font-size: 4rem;
+  opacity: 0.8;
+}
+
+.layer {
+  height: 200rem;
+}
+
+/* color pallette from Color Hunt (https://colorhunt.co/palette/faffaf96c9f43fa2f60f67b1) was used and modified */
+/* I found that yellow gave a nice contrast to the blue shades. It distinct objects and the sky well. */
+/* The gradient from a lighter shade of blue that gradually darkens represents the layers of the Earth's atmosphere. */
+.space {
+  background: black;
+}
+.exosphere {
+  background: linear-gradient(#000000, #000046);
+}
+.thermosphere {
+  background: linear-gradient(#000046, #0f67b1);
+}
+.mesosphere {
+  background: linear-gradient(#0f67b1, #3fa2f6);
+}
+.stratosphere {
+  background: linear-gradient(#3fa2f6, #96c9f4);
+}
+.troposphere {
+  background: linear-gradient(#96c9f4, #5ba9ec);
+}
+
+/* The ground layer should show a clear guide on what to do. While not taking up too much space.
+So that it won't interfere with the other layers. */
+.layer-ground {
+  height: 10rem;
+  background: #449d4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* The end layer doesn't have to be big. Keeping the UI consistently clean. */
+.layer-end {
+  height: 3rem;
+  background: linear-gradient(-70deg, rgb(35, 8, 35), rgb(2, 2, 30));
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.info-object {
+  position: relative;
+  text-align: center;
+  top: 45%;
+  left: 50%;
+}
+
+/* Since this website is more visual based, the images should be big enough to be seen clearly. */
+.info-object img {
+  width: 30rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.info-object p {
+  opacity: 0;
+  max-width: 30rem;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 2rem;
+  transition: opacity 0.3s;
+}
+
+/* Hover effect to scale up the image */
+.info-object:hover img {
+  transform: scale(1.1);
+}
+
+/* On hover, the description text becomes visible. The text was hidden in the first place to keep the focus on the image.
+And to have a consistent clean look to the website. */
+.info-object:hover p {
+  opacity: 1;
+}

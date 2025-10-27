@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>Scroll up to space!</title>
+  </head>
+  <body>
+    <!-- The fixed display showing height and layer. This value will increase on scroll and the layer will change accordingly, using Java Script -->
+    <div id="height-display">
+      <div id="distance">0 km</div>
+      <div id="layer">Troposphere</div>
+    </div>
+
+       <!-- Based on trial and error, the order of the atmosphere has to be written from top to bottom in HTML.
+      This is because the scroll event listener calculates the distance from the top of the scroll area,
+      so the topmost layer (space) has to be written first in order to be detected first. -->
+    <div id="scroll-area">
+      <!-- The end layer at the top to show the end point and citing the information I got from -->
+      <section class="layer-end">
+      <p>Information for the Earth's atmosphere was gathered from
+          https://www.flightdeckfriend.com/what-are-the-different-layers-of-the-atmosphere/</p>
+      </section>
+      <!-- Each layer is represented by a section with a class corresponding to its name. 
+       Along with objects to show the placement of things in each layer. -->
+
+       <!-- I graphic designed each object to ensure a cohesive look, design, and color throughout the website.
+        As well as not having to deal with copyright issues. It can be time consuming, but it will be a proud work of mine in the end. -->
+        <!-- The graphics have a clean and simple shapes look. With a consistent color palette that enhances the overall user experience.
+         The simple design and color palette saves time to develop this website while maintaining a cohesive look. -->
+         <!-- The design was made using Adobe Illustrator. -->
+      <section class="layer space">
+        <div class="info-object">
+        <img src="assets/Spaceship.png" alt="Spaceship">
+        <!-- Under the graphics there is a description of the object. This provides context and information.
+         Making this an educational experience for the user. More information could be added but it is not necessary for the current scope of the project. -->
+        <p>Spaceships goes beyond this point...</p>
+      </section>
+      <section class="layer exosphere">
+        <div class="info-object">
+        <img src="assets/satellite.png" alt="Satellite">
+        <p>This is where satellites orbit the Earth.</p>
+      </section>
+      <section class="layer thermosphere">
+        <div class="info-object">
+        <img src="assets/aurora.png" alt="Aurora">
+        <p>This is where the aurora occur.</p>
+      </section>
+      <section class="layer mesosphere">
+        <div class="info-object">
+        <img src="assets/meteors.png" alt="Meteor">
+        <p>This is where most meteors burn up upon entering Earth's atmosphere.</p>
+      </section>
+      <section class="layer stratosphere">
+        <div class="info-object">
+        <img src="assets/radiosonde.png" alt="Radiosonde">
+        <p>This is where radiosondes collect data from the atmosphere.</p>
+      </section>
+      <section class="layer troposphere">
+        <div class="info-object">
+          <img src="assets/plane.png" alt="Plane">
+          <p>This is where the commercial planes fly.</p>
+        </div>
+      </section>
+      <!-- The ground layer at the bottom to show the starting point and a guide on what to do (scroll up) -->
+      <section class="layer-ground">
+          <p>Scroll up to space!</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
